@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Portal</title>
+    <style>
+        /* Definiciones de Color tomadas del código original */
+        :root {
+            --color-rojo-principal: #CC3333; /* Fondo */
+            --color-rojo-botones: #CC0000; /* Botones y énfasis */
+            --color-rosa-superior: #FF99AA; /* Botonera */
+            --color-blanco: #FFFFFF; /* Contenido principal */
+            --color-gris-oscuro: #333333; /* Sección secundaria o footer */
+            --color-texto-claro: #F0F0F0;
+            --color-texto-oscuro: #222222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: var(--color-rojo-principal); /* Fondo Principal ROJO */
+            color: var(--color-texto-claro);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* SECCIÓN SUPERIOR: BOTONERA (ROSA) - Copiado de index.html */
+        #botonera {
+            width: 100%;
+            height: 80px;
+            background-color: var(--color-rosa-superior);
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            color: var(--color-texto-oscuro);
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Estilos de botones de la botonera (para enlaces) */
+        .btn-wrapper {
+            flex: 1;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .btn-wrapper.inicio-btn-wrapper {
+            flex: 2;
+        }
+
+        .btn {
+            background-color: var(--color-rojo-botones);
+            color: var(--color-blanco);
+            border: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #AA0000;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .inicio-btn {
+            background-color: var(--color-rojo-botones);
+            color: var(--color-blanco);
+        }
+
+        /* DISEÑO ESPECÍFICO DE PERFIL */
+        #perfil-content {
+            display: flex;
+            padding: 40px;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 40px auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Tarjeta de información principal (BLANCO) */
+        #info-principal {
+            background-color: var(--color-blanco);
+            color: var(--color-texto-oscuro);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            flex: 2;
+            min-width: 300px;
+        }
+
+        #info-principal h2 {
+            color: var(--color-rojo-botones);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--color-rosa-superior);
+            padding-bottom: 10px;
+        }
+
+        /* Tarjeta de Habilidades/Gráficos (GRIS OSCURO) */
+        #habilidades {
+            background-color: var(--color-gris-oscuro);
+            color: var(--color-texto-claro);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        #habilidades h3 {
+             color: var(--color-rosa-superior);
+             margin-bottom: 15px;
+        }
+
+        /* Estilo para los elementos de lista */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 5px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Imagen de Perfil (similar a imagencul1 pero más pequeña) */
+        #perfil-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--color-rojo-botones);
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="botonera">
+        <h1>MI PORTAL</h1>
+        <a href="index.html" class="btn-wrapper inicio-btn-wrapper">
+            <button class="btn inicio-btn">Inicio</button>
+        </a>
+        <a href="#" class="btn-wrapper">
+            <button class="btn">Calendario</button>
+        </a>
+        <a href="#" class="btn-wrapper">
+            <button class="btn">Portfolio</button>
+        </a>
+        <a href="#" class="btn-wrapper">
+            <button class="btn">Servicios</button>
+        </a>
+        <a href="#" class="btn-wrapper">
+            <button class="btn">Recursos</button>
+        </a>
+        <a href="#" class="btn-wrapper">
+            <button class="btn">Materias</button>
+        </a>
+    </div>  
+    
+    <div id="perfil-content">
+        
+        <div id="info-principal">
+            <img id="perfil-img" 
+                 src="https://placehold.co/150x150/CC3333/FFFFFF?text=Tu+Foto" 
+                 alt="Foto de Perfil"/>
+                 
+            <h2>Información Personal y Académica</h2>
+            
+            <p><strong>Nombre:</strong> [Tu Nombre Aquí]</p>
+            <p><strong>Matrícula:</strong> 00000000</p>
+            <p><strong>Campus:</strong> [Campus UVM]</p>
+            <p><strong>Carrera/Área:</strong> [Nombre de la Carrera]</p>
+            <br>
+            
+            <h3>Resumen Académico</h3>
+            <p>Estudiante dedicado con enfoque en [Área de Especialización]. Participación activa en [Menciona un Taller/Evento] y manejo de herramientas de desarrollo web y diseño.</p>
+        </div>
+
+        <div id="habilidades">
+            <h3>Habilidades Clave</h3>
+            <ul>
+                <li>HTML5 / CSS3</li>
+                <li>Diseño Responsivo</li>
+                <li>Prototipado (Ej. Figma/Dreamweaver)</li>
+                <li>Manejo de Bases de Datos</li>
+                <li>Pensamiento Crítico</li>
+            </ul>
+            
+            <br>
+            <h3>Contacto</h3>
+            <p>Email: tu.correo@uvm.edu</p>
+            <p>Teléfono: (55) 1234-5678</p>
+        </div>
+        
+    </div>
+
+</div>
+</body>
+</html>

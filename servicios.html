@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Portal</title>
+    <style>
+        /* Definiciones de Color tomadas del código original */
+        :root {
+            --color-rojo-principal: #CC3333; /* Fondo */
+            --color-rojo-botones: #CC0000; /* Botones y énfasis */
+            --color-rosa-superior: #FF99AA; /* Botonera y acentos */
+            --color-blanco: #FFFFFF; /* Tarjetas de servicio */
+            --color-gris-oscuro: #333333; /* Sección secundaria */
+            --color-texto-claro: #F0F0F0;
+            --color-texto-oscuro: #222222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: var(--color-rojo-principal); /* Fondo Principal ROJO */
+            color: var(--color-texto-claro);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* SECCIÓN SUPERIOR: BOTONERA (ROSA) - Copiado de index.html */
+        #botonera {
+            width: 100%;
+            height: 80px;
+            background-color: var(--color-rosa-superior);
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            color: var(--color-texto-oscuro);
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Estilos de botones de la botonera (para enlaces) */
+        .btn-wrapper {
+            flex: 1;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .btn-wrapper.inicio-btn-wrapper {
+            flex: 2;
+        }
+
+        .btn {
+            background-color: var(--color-rojo-botones);
+            color: var(--color-blanco);
+            border: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #AA0000;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Estilo para el botón activo (Servicios) */
+        .active-btn { 
+            background-color: var(--color-rojo-botones);
+            color: var(--color-blanco);
+        }
+        
+        /* CONTENIDO PRINCIPAL DE SERVICIOS */
+        #servicios-content {
+            padding: 50px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #servicios-content h2 {
+            text-align: center;
+            color: var(--color-rosa-superior);
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Tarjeta de Servicio (BLANCO) */
+        .servicio-card {
+            background-color: var(--color-blanco);
+            color: var(--color-texto-oscuro);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-align: center;
+            transition: box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .servicio-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        .servicio-card h3 {
+            color: var(--color-rojo-botones);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-rosa-superior);
+        }
+
+        .servicio-card p {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .servicio-card a.boton {
+            background-color: var(--color-rojo-botones);
+            color: var(--color-blanco);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .servicio-card a.boton:hover {
+            background-color: #AA0000;
+        }
+
+        /* Sección de Contacto Rápido (GRIS OSCURO) */
+        #contacto-rapido {
+            background-color: var(--color-gris-oscuro);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        #contacto-rapido h3 {
+            color: var(--color-rosa-superior);
+            margin-bottom: 15px;
+        }
+
+        #contacto-rapido p {
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="botonera">
+        <h1>MI PORTAL</h1>
+        <a href="perfil.html" class="btn-wrapper inicio-btn-wrapper">
+            <button class="btn">Perfil</button>
+        </a>
+        <a href="calendario.html" class="btn-wrapper">
+            <button class="btn">Calendario</button>
+        </a>
+        <a href="portfolio.html" class="btn-wrapper">
+            <button class="btn">Portfolio</button>
+        </a>
+        <a href="servicios.html" class="btn-wrapper">
+            <button class="btn active-btn">Servicios</button>
+        </a>
+        <a href="recursos.html" class="btn-wrapper">
+            <button class="btn">Recursos</button>
+        </a>
+        <a href="#" class="btn-wrapper">
+            <button class="btn">Materias</button>
+        </a>
+    </div>  
+    
+    <div id="servicios-content">
+        <h2>Servicios del Campus</h2>
+        
+        <div class="servicios-grid">
+            
+            <div class="servicio-card">
+                <h3>Atención al Alumno</h3>
+                <p>Información sobre inscripciones, trámites de reinscripción y dudas administrativas generales.</p>
+                <a href="#" class="boton">Solicitar Cita</a>
+            </div>
+            
+            <div class="servicio-card">
+                <h3>Biblioteca y Hemeroteca</h3>
+                <p>Acceso a recursos físicos y virtuales, cubículos de estudio y préstamo de material.</p>
+                <a href="#" class="boton">Ir a la Biblioteca</a>
+            </div>
+            
+            <div class="servicio-card">
+                <h3>Soporte Tecnológico</h3>
+                <p>Ayuda con problemas de acceso a plataformas, correo institucional y redes del campus.</p>
+                <a href="#" class="boton">Abrir Ticket</a>
+            </div>
+
+            <div class="servicio-card">
+                <h3>Becas y Financiamiento</h3>
+                <p>Orientación sobre opciones de becas internas, externas y planes de financiamiento educativo.</p>
+                <a href="#" class="boton">Ver Opciones</a>
+            </div>
+            
+        </div>
+
+        <div id="contacto-rapido">
+            <h3>¿Necesitas ayuda inmediata?</h3>
+            <p>Puedes comunicarte directamente con nuestro centro de atención al estudiante.</p>
+            <p>Teléfono: <strong>(55) 5555-5555</strong></p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WIKI COLAB</title>
+<style>
+    body{
+        margin:0;
+        font-family: montserrat, sans-serif;
+        background:#e80024;
+	}
+ .topbar{
+        width:100%;
+        background:#ffffff;
+        border-bottom-left-radius:40px;
+        border-bottom-right-radius:40px;
+        padding:20px 0;
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        flex-wrap:wrap;
+        box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    }
+
+ .top-btn{
+        background:#ffb3b3;
+        padding:20px 25px;
+        border-radius:30px;
+        font-size:25px;
+        cursor:pointer;
+	}
+	
+.menu-icon{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        color:white;
+        font-size:24px;
+        padding:30px;
+	    width:90%;
+    }
+
+    .nav{
+        display:flex;
+        gap:15px;
+        flex-wrap:wrap;
+    }
+
+    .nav a{
+        background:#ffb3b3;
+        padding:12px 22px;
+        border-radius:30px;
+        text-decoration:none;
+        color:black;
+        font-size:18px;
+    }
+
+	
+.logo{
+        width:140px;
+        height:60px;
+        background:#ddd;
+        border-radius:15px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:14px;
+        color:#666;
+    }
+.linea{
+        width:100%;
+        height:3px;
+        background:white;
+        margin:20px 0;
+    }
+	
+.cards{
+        margin-top:20px;
+        display:flex;
+        justify-content:space-between;
+        flex-wrap:wrap;
+        gap:20px;
+    }
+
+ .card {
+	background:#ffffff;
+    width: 30%;
+    height: 350px;
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+ .card button {
+    position: absolute;
+    bottom: 20px;     
+    left: 50%;         
+    transform: translateX(-50%);
+    background: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+	
+.opinion{
+        margin-top:40px;
+        color:white;
+        font-size:26px;
+    }
+	
+.opinion-linea{
+        width:80%;
+        height:3px;
+        background:white;
+        margin:20px 0;
+    }
+.content{
+    width:90%;
+    max-width:1800px;   
+    margin:40px auto;        
+    box-sizing:border-box;
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+    <div class="logo"><img src="logo_uvm.png" width="100%" height="100%" alt=""/></div>
+    <div class="nav">
+        <a href="../INDEX/INDEX.html">Inicio </a>
+        <a href="../CALENDARIO/CALENDARIO.html">Calendario</a>
+        <a href="../MATERIAS/MATERIAShtml.html">Materias</a>
+        <a href="../DISCUSIONES/DISCUSIONES.html">Discusiones</a>
+        <a href="../RECURSOS/RECURSOS.html">Recursos</a>
+        <a href="../PAGOS/PAGOS.html">Pagos</a>
+    </div>
+</div>
+
+<div class="menu-icon">
+    <div>🏠</div>
+    <span>HOME</span>
+</div>
+	
+<div class="content"> 
+<div class="linea"></div>
+
+<p>
+El objetivo de esta wiki es ofrecer a los alumnos de licenciatura que cursan sus primeros semestres una herramienta digital accesible, bien estructurada y fácil de consultar, que les ayude a asimilar los conceptos clave de la programación web. Esto fomentará el entendimiento de las bases del desarrollo web, los lenguajes más comunes, las buenas prácticas de codificación y los procedimientos necesarios para llevar a cabo soluciones funcionales en entornos digitales. Al operar como un repositorio colaborativo, ayudará directamente a reforzar la formación académica de los estudiantes, promoviendo el desarrollo de habilidades esenciales para su futura labor profesional en campos relacionados con la tecnología y el diseño digital.
+</p>
+<div class="linea"></div>
+ 
+<div class="cards">
+      <div class="card">
+            <button>Talleres</button>
+		    <img src="talleres.jpg" width="100%" height="80%" alt=""/>
+		    </div>
+
+      <div class="card">
+    <a href="Temas.html" class="card-link">
+        <button>Temas</button>
+        <img src="Temas.jpg" width="100%" height="80%" alt=""/>
+    </a>
+</div>
+	
+      <div class="card">
+            <button>Biblioteca</button>
+		    <a href="https://bibliotecas.uvmnet.edu/portico/gui/"
+       class="card-link" 
+       target="_blank"></a>
+		    <img src="biblioteca.jpg" width="100%" height="80%" alt=""/> </div>
+            </div>
+
+<div class="opinion">
+            Comparte tu opinión:
+        </div>
+        <div class="opinion-linea"></div>
+        <div class="opinion-linea"></div>
+        <div class="opinion-linea"></div>
+</div>
+
+
+</body>
+</html>

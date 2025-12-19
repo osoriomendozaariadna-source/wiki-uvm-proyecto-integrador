@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temas</title>
+
+<style>
+    body{
+        margin:0;
+        font-family: Arial, sans-serif;
+        background:#e80024;
+    }
+	
+    .topbar{
+        width:100%;
+        background:#ffffff;
+        padding:20px 40px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        border-bottom-left-radius:40px;
+        border-bottom-right-radius:40px;
+        box-shadow:0 2px 8px rgba(0,0,0,0.2);
+        box-sizing:border-box;
+    }
+
+    .logo{
+        width:150px;
+        height:60px;
+        background:#ddd;
+        border-radius:15px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:14px;
+        color:#555;
+    }
+
+    .nav{
+        display:flex;
+        gap:15px;
+        flex-wrap:wrap;
+    }
+
+    .nav a{
+        background:#ffb3b3;
+        padding:12px 22px;
+        border-radius:30px;
+        text-decoration:none;
+        color:black;
+        font-size:18px;
+    }
+
+    .content{
+        width:95%;
+        max-width:1200px;
+        margin:40px auto;
+        padding:30px;
+        box-sizing:border-box;
+        color:white;
+    }
+
+    .menu-icon{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:10px;
+        font-size:26px;
+        margin-bottom:30px;
+    }
+
+    .topics{
+        background:white;
+        color:black;
+        border-radius:30px;
+        padding:40px;
+    }
+
+    .topics h2{
+        margin-top:0;
+        font-size:32px;
+    }
+
+    .topic-category{
+        margin-top:50px;
+    }
+
+    .topic-category h3{
+        color:#e80024;
+        font-size:24px;
+        margin-bottom:20px;
+    }
+
+    .topic-list{
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+        gap:20px;
+    }
+
+    .topic-card{
+        background:#f2f2f2;
+        border-radius:20px;
+        padding:20px;
+    }
+
+    .topic-card h4{
+        margin-top:0;
+        font-size:18px;
+    }
+
+    .topic-card p{
+        font-size:15px;
+        line-height:1.4;
+        text-align:justify;
+    }
+
+    .topic-card a{
+        display:inline-block;
+        margin-top:10px;
+        color:#e80024;
+        text-decoration:none;
+        font-weight:bold;
+    }
+
+    .topic-card a:hover{
+        text-decoration:underline;
+    }
+
+    .ver-todos-container{
+        display:flex;
+        justify-content:center;
+        margin-top:25px;
+    }
+
+    .ver-todos{
+        background:#e80024;
+        color:white;
+        border:none;
+        padding:10px 30px;
+        border-radius:25px;
+        cursor:pointer;
+        font-size:15px;
+    }
+
+    .ver-todos:hover{
+        opacity:0.9;
+    }
+
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="logo"><img src="../Imagenes/logo_uvm.png" width="100%" height="100%" alt=""/></div>
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="calendario.html">Calendario</a>
+        <a href="materias.html">Materias</a>
+        <a href="temas.html">Temas</a>
+        <a href="discusiones.html">Discusiones</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="pagos.html">Pagos</a>
+    </nav>
+</header>
+
+<div class="content">
+
+    <div class="menu-icon">
+        🏠 <strong>TEMAS</strong>
+    </div>
+
+    <div class="topics">
+
+        <h2>Temas de la Wiki</h2>
+
+        <p>
+            Esta sección reúne los principales temas relacionados con el diseño web, diseño gráfico y diseño multimedia.
+            Cada entrada funciona como un artículo colaborativo.
+        </p>
+
+        <!-- DISEÑO WEB -->
+        <div class="topic-category">
+            <h3>Diseño Web</h3>
+
+            <div class="topic-list">
+                <div class="topic-card">
+                    <h4>Diseño web responsivo</h4>
+                    <p>Adaptación de sitios web a diferentes tamaños de pantalla y dispositivos.</p>
+                    <a href="discusiones.html">Ver tema</a>
+                </div>
+
+                <div class="topic-card">
+                    <h4>UX / UI</h4>
+                    <p>Experiencia del usuario y diseño de interfaces digitales.</p>
+                    <a href="#">Ver tema</a>
+                </div>
+
+                <div class="topic-card">
+                    <h4>Accesibilidad web</h4>
+                    <p>Diseño inclusivo para todo tipo de usuarios.</p>
+                    <a href="#">Ver tema</a>
+                </div>
+
+                <div class="topic-card">
+                    <h4>HTML y CSS</h4>
+                    <p>Lenguajes base del desarrollo web.</p>
+                    <a href="#">Ver tema</a>
+                </div>
+            </div>
+
+            <div class="ver-todos-container">
+                <button class="ver-todos">Ver todos los temas</button>
+            </div>
+        </div>
+
+        <!-- DISEÑO GRÁFICO -->
+        <div class="topic-category">
+            <h3>Diseño Gráfico</h3>
+
+            <div class="topic-list">
+                <div class="topic-card">
+                    <h4>Teoría del color</h4>
+                    <p>Uso del color y su impacto visual.</p>
+                    <a href="#">Ver tema</a>
+                </div>
+
+                <div class="topic-card">
+                    <h4>Tipografía</h4>
+                    <p>Selección y uso de fuentes.</p>
+                    <a href="#">Ver tema</a>
+                </div>
+
+                <div class="topic-card">
+                    <h4>Composición visual</h4>
+                    <p>Organización de elementos gráficos.</p>
+                    <a href="#">Ver tema</a>
+                </div>
+
+                <div class="topic-card">
+                    <h4>Identidad visual</h4>
+                    <p>Construcción gráfica de una marca.</p>
+                    <a href="#">Ver tema</a>
+                </div>
+            </div>
+
+            <div class="ver-todos-container">
+                <button class="ver-todos">Ver todos los temas</button>
+            </div>
+        </div>
+
+        <!-- DISEÑO MULTIMEDIA -->
+        <div class="topic-category">
+            <h3>Diseño Multimedia</h3>
+
+            <div class="topic-list">
+                <div class="topic-card">
+                    <h4>Animación digital</h4>
+                    <p>Creación de movimiento mediante recursos digitales.</p>
+                    <a href="#">Ver tema</a>
+                </div>
+
+                <div class="topic-card">
+                    <h4>Edición de video</h4>
+                    <p>Postproducción y narrativa audiovisual.</p>
+                    <a href="#">Ver tema</a>
+                </div>
+
+                <div class="topic-card">
+                    <h4>Diseño interactivo</h4>
+                    <p>Experiencias que responden a la interacción del usuario.</p>
+                    <a href="#">Ver tema</a>
+                </div>
+
+                <div class="topic-card">
+                    <h4>Audio y sonido</h4>
+                    <p>Uso del sonido como recurso comunicativo.</p>
+                    <a href="#">Ver tema</a>
+                </div>
+            </div>
+
+            <div class="ver-todos-container">
+                <button class="ver-todos">Ver todos los temas</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

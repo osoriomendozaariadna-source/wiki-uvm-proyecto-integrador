@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Contacto</title>
+<style>
+  body{font-family:Inter,Arial,sans-serif;margin:0;padding:18px;background:#fafafa}
+  .wrap{max-width:720px;margin:12px auto}
+  a.back{display:inline-block;margin-bottom:12px;color:#555;text-decoration:none}
+  form{background:#fff;padding:18px;border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,.05)}
+  label{display:block;margin-top:8px;font-weight:700}
+  input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-top:6px}
+  button{background:#D8232A;color:#fff;padding:10px 12px;border-radius:8px;border:none;margin-top:12px;cursor:pointer}
+  .success{display:none;color:green;margin-top:12px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="pagina.html">← Volver</a>
+    <h2>Contacto</h2>
+    <form id="f" onsubmit="send(event)">
+      <label>Nombre</label><input id="name" required>
+      <label>Correo</label><input id="email" type="email" required>
+      <label>Mensaje</label><textarea id="msg" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+      <div class="success" id="ok">Mensaje enviado (demo)</div>
+    </form>
+  </div>
+
+<script>
+function send(e){
+  e.preventDefault();
+  // validación simple
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if(!name || !email){ alert('Completa los campos'); return; }
+  document.getElementById('ok').style.display = 'block';
+  setTimeout(()=> document.getElementById('ok').style.display = 'none', 3000);
+  document.getElementById('f').reset();
+}
+</script>
+</body>
+</html>
+

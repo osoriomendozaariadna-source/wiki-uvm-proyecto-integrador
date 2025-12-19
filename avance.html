@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Avance Académico</title>
+<style>
+  body{font-family:Inter,Arial,sans-serif;margin:0;padding:18px;background:#fafafa}
+  .wrap{max-width:1000px;margin:12px auto}
+  a.back{display:inline-block;margin-bottom:12px;color:#555;text-decoration:none}
+  .card{background:#fff;padding:16px;border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,.04)}
+  .bars{display:grid;grid-template-columns:1fr 160px;gap:12px;align-items:center}
+  .bar{height:16px;background:#eee;border-radius:999px;overflow:hidden}
+  .bar .fill{height:100%;background:linear-gradient(90deg,#b6d56f,#5fb26f);width:0;transition:width 1.2s}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="pagina.html">← Volver</a>
+    <h2>Avance académico</h2>
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div><strong>Créditos completados</strong><div style="color:#666">68 / 180</div></div>
+        <div style="font-size:28px;font-weight:800;color:#D8232A">37%</div>
+      </div>
+
+      <div style="margin-top:16px">
+        <div class="bars" style="margin-bottom:8px">
+          <div>
+            <div style="font-weight:700">Formación básica</div>
+            <div class="bar"><div class="fill" data-w="85"></div></div>
+          </div>
+          <div style="text-align:right;color:#666">85%</div>
+        </div>
+
+        <div class="bars" style="margin-bottom:8px">
+          <div>
+            <div style="font-weight:700">Formación profesional</div>
+            <div class="bar"><div class="fill" data-w="40"></div></div>
+          </div>
+          <div style="text-align:right;color:#666">40%</div>
+        </div>
+
+        <div class="bars">
+          <div>
+            <div style="font-weight:700">Complementarias</div>
+            <div class="bar"><div class="fill" data-w="60"></div></div>
+          </div>
+          <div style="text-align:right;color:#666">60%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  document.querySelectorAll('.fill').forEach(f=>{
+    setTimeout(()=> f.style.width = f.getAttribute('data-w') + '%', 120);
+  });
+</script>
+</body>
+</html>

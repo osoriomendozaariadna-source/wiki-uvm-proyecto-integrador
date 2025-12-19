@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materias - Portal</title>
+    <style>
+        /* Definiciones de Color tomadas del código original */
+        :root {
+            --color-rojo-principal: #CC3333; /* Fondo */
+            --color-rojo-botones: #CC0000; /* Botones y énfasis */
+            --color-rosa-superior: #FF99AA; /* Botonera y acentos */
+            --color-blanco: #FFFFFF; /* Tarjetas de materia */
+            --color-gris-oscuro: #333333; /* Barra lateral/resumen */
+            --color-texto-claro: #F0F0F0;
+            --color-texto-oscuro: #222222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: var(--color-rojo-principal); /* Fondo Principal ROJO */
+            color: var(--color-texto-claro);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* SECCIÓN SUPERIOR: BOTONERA (ROSA) - Copiado de index.html */
+        #botonera {
+            width: 100%;
+            height: 80px;
+            background-color: var(--color-rosa-superior);
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            color: var(--color-texto-oscuro);
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Estilos de botones de la botonera (para enlaces) */
+        .btn-wrapper {
+            flex: 1;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .btn-wrapper.inicio-btn-wrapper {
+            flex: 2;
+        }
+
+        .btn {
+            background-color: var(--color-rojo-botones);
+            color: var(--color-blanco);
+            border: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #AA0000;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Estilo para el botón activo (Materias) */
+        .active-btn { 
+            background-color: var(--color-rojo-botones);
+            color: var(--color-blanco);
+        }
+        
+        /* CONTENIDO PRINCIPAL DE MATERIAS */
+        #materias-content {
+            display: flex;
+            padding: 40px;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        /* Columna de Materias (Principal) */
+        #lista-materias {
+            flex: 3;
+            min-width: 60%;
+        }
+        
+        #lista-materias h2 {
+            color: var(--color-rosa-superior);
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--color-rosa-superior);
+            padding-bottom: 10px;
+        }
+
+        /* Tarjeta de Materia (BLANCO) */
+        .materia-card {
+            background-color: var(--color-blanco);
+            color: var(--color-texto-oscuro);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid var(--color-rojo-botones);
+        }
+
+        .materia-info h3 {
+            color: var(--color-rojo-botones);
+            margin-bottom: 5px;
+        }
+        
+        .materia-info p {
+            font-size: 0.9em;
+            color: #555555;
+        }
+        
+        .materia-acciones a {
+            background-color: var(--color-rojo-botones);
+            color: var(--color-blanco);
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s;
+            margin-left: 10px;
+            font-size: 0.9em;
+        }
+        
+        .materia-acciones a:hover {
+            background-color: #AA0000;
+        }
+
+        /* Barra Lateral (GRIS OSCURO) */
+        #resumen-creditos {
+            flex: 1;
+            background-color: var(--color-gris-oscuro);
+            color: var(--color-texto-claro);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            min-width: 250px;
+        }
+        
+        #resumen-creditos h3 {
+            color: var(--color-rosa-superior);
+            margin-bottom: 15px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        #resumen-creditos p {
+            margin-bottom: 10px;
+        }
+        
+        .progreso-bar {
+            background-color: #555555;
+            border-radius: 5px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .progreso-relleno {
+            height: 15px;
+            width: 75%; /* Ejemplo: 75% de avance */
+            background-color: var(--color-rojo-botones);
+            transition: width 0.5s;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="botonera">
+        <h1>MI PORTAL</h1>
+        <a href="perfil.html" class="btn-wrapper inicio-btn-wrapper">
+            <button class="btn">Perfil</button>
+        </a>
+        <a href="calendario.html" class="btn-wrapper">
+            <button class="btn">Calendario</button>
+        </a>
+        <a href="portfolio.html" class="btn-wrapper">
+            <button class="btn">Portfolio</button>
+        </a>
+        <a href="servicios.html" class="btn-wrapper">
+            <button class="btn">Servicios</button>
+        </a>
+        <a href="recursos.html" class="btn-wrapper">
+            <button class="btn">Recursos</button>
+        </a>
+        <a href="materias.html" class="btn-wrapper">
+            <button class="btn active-btn">Materias</button>
+        </a>
+    </div>  
+    
+    <div id="materias-content">
+        
+        <div id="lista-materias">
+            <h2>Materias del Semestre Actual</h2>
+
+            <div class="materia-card">
+                <div class="materia-info">
+                    <h3>Diseño y Desarrollo Web</h3>
+                    <p>Profesor: Lic. Ana Martínez | Calificación: 9.5</p>
+                </div>
+                <div class="materia-acciones">
+                    <a href="#">Contenido</a>
+                    <a href="#">Tareas</a>
+                </div>
+            </div>
+
+            <div class="materia-card">
+                <div class="materia-info">
+                    <h3>Bases de Datos Avanzadas</h3>
+                    <p>Profesor: Mtro. Luis Pérez | Calificación: 8.8</p>
+                </div>
+                <div class="materia-acciones">
+                    <a href="#">Contenido</a>
+                    <a href="#">Tareas</a>
+                </div>
+            </div>
+
+            <div class="materia-card">
+                <div class="materia-info">
+                    <h3>Inglés Intermedio</h3>
+                    <p>Profesor: Mtra. Karla Gómez | Calificación: 10.0</p>
+                </div>
+                <div class="materia-acciones">
+                    <a href="#">Contenido</a>
+                    <a href="#">Tareas</a>
+                </div>
+            </div>
+            
+            </div>
+        
+        <div id="resumen-creditos">
+            <h3>Resumen de Créditos</h3>
+            <p>Créditos Acumulados: 90 / 120</p>
+            <div class="progreso-bar">
+                <div class="progreso-relleno" style="width: 75%;"></div>
+            </div>
+            <br>
+            <p>Promedio General: 9.2</p>
+            <p>Estatus: Regular</p>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

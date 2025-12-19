@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Portal</title>
+    <style>
+        /* Definiciones de Color tomadas del código original */
+        :root {
+            --color-rojo-principal: #CC3333; /* Fondo */
+            --color-rojo-botones: #CC0000; /* Botones y énfasis */
+            --color-rosa-superior: #FF99AA; /* Botonera y acentos */
+            --color-blanco: #FFFFFF; /* Contenido de las tarjetas de proyectos */
+            --color-gris-oscuro: #333333; /* Fondo de la sección de proyectos */
+            --color-texto-claro: #F0F0F0;
+            --color-texto-oscuro: #222222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: var(--color-rojo-principal); /* Fondo Principal ROJO */
+            color: var(--color-texto-claro);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* SECCIÓN SUPERIOR: BOTONERA (ROSA) - Copiado de index.html */
+        #botonera {
+            width: 100%;
+            height: 80px;
+            background-color: var(--color-rosa-superior);
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            color: var(--color-texto-oscuro);
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Estilos de botones de la botonera (para enlaces) */
+        .btn-wrapper {
+            flex: 1;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .btn-wrapper.inicio-btn-wrapper {
+            flex: 2;
+        }
+
+        .btn {
+            background-color: var(--color-rojo-botones);
+            color: var(--color-blanco);
+            border: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #AA0000;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Estilo para el botón activo (Portfolio) */
+        .active-btn { 
+            background-color: var(--color-rojo-botones);
+            color: var(--color-blanco);
+        }
+        
+        /* CONTENIDO PRINCIPAL DEL PORTFOLIO */
+        #portfolio-header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            color: var(--color-texto-claro);
+        }
+
+        #portfolio-header h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--color-rosa-superior);
+        }
+        
+        /* Sección de proyectos (utiliza el GRIS OSCURO como fondo de galería) */
+        #proyectos-grid {
+            background-color: var(--color-gris-oscuro);
+            padding: 50px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .proyecto-card {
+            background-color: var(--color-blanco);
+            color: var(--color-texto-oscuro);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+            text-decoration: none; /* Para que la tarjeta funcione como enlace */
+            display: block;
+        }
+        
+        .proyecto-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .proyecto-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--color-rojo-botones);
+        }
+
+        .proyecto-info {
+            padding: 20px;
+        }
+
+        .proyecto-info h3 {
+            color: var(--color-rojo-botones);
+            margin-bottom: 10px;
+        }
+
+        .proyecto-info p {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .tag-box {
+            display: inline-block;
+            background-color: var(--color-rosa-superior);
+            color: var(--color-texto-oscuro);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="botonera">
+        <h1>MI PORTAL</h1>
+        <a href="perfil.html" class="btn-wrapper inicio-btn-wrapper">
+            <button class="btn">Perfil</button>
+        </a>
+        <a href="calendario.html" class="btn-wrapper">
+            <button class="btn">Calendario</button>
+        </a>
+        <a href="portfolio.html" class="btn-wrapper">
+            <button class="btn active-btn">Portfolio</button>
+        </a>
+        <a href="#" class="btn-wrapper">
+            <button class="btn">Servicios</button>
+        </a>
+        <a href="#" class="btn-wrapper">
+            <button class="btn">Recursos</button>
+        </a>
+        <a href="#" class="btn-wrapper">
+            <button class="btn">Materias</button>
+        </a>
+    </div>  
+    
+    <div id="portfolio-header">
+        <h2>Mis Proyectos Destacados</h2>
+        <p>Una colección de mis mejores trabajos académicos y personales.</p>
+    </div>
+    
+    <div id="proyectos-grid">
+        
+        <a href="#" class="proyecto-card">
+            <img src="https://placehold.co/600x200/FF99AA/222222?text=Proyecto+Web+Final" alt="Imagen del Proyecto 1"/>
+            <div class="proyecto-info">
+                <h3>Proyecto Integrador E5</h3>
+                <p>Implementación completa de la navegación y diseño responsivo en HTML/CSS, basado en la paleta de colores de Payo2.0.</p>
+                <span class="tag-box">Desarrollo Web</span>
+            </div>
+        </a>
+        
+        <a href="#" class="proyecto-card">
+            <img src="https://placehold.co/600x200/CC3333/FFFFFF?text=Diseño+UX/UI" alt="Imagen del Proyecto 2"/>
+            <div class="proyecto-info">
+                <h3>Diseño de Aplicación Móvil</h3>
+                <p>Prototipo funcional de una aplicación para gestión de horarios académicos, desarrollado en Figma.</p>
+                <span class="tag-box">UX/UI</span>
+                <span class="tag-box">Prototipado</span>
+            </div>
+        </a>
+        
+        <a href="#" class="proyecto-card">
+            <img src="https://placehold.co/600x200/333333/F0F0F0?text=Base+de+Datos" alt="Imagen del Proyecto 3"/>
+            <div class="proyecto-info">
+                <h3>Sistema de Gestión de Biblioteca</h3>
+                <p>Creación de una base de datos relacional y consultas SQL para un sistema de inventario y préstamo de libros.</p>
+                <span class="tag-box">Base de Datos</span>
+            </div>
+        </a>
+
+        </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!doctype html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de payo2.0 - Paleta de Colores Modificada</title>
+    <style>
+        /* Definiciones de Color */
+        :root {
+            --color-rojo-principal: #CC3333; /* Fondo */
+            --color-rojo-botones: #CC0000; /* Botones y énfasis */
+            --color-rosa-superior: #FF99AA; /* Botonera */
+            --color-blanco: #FFFFFF; /* Tarjetas de la derecha */
+            --color-gris-oscuro: #333333; /* Galería */
+            --color-texto-claro: #F0F0F0;
+            --color-texto-oscuro: #222222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: var(--color-rojo-principal); /* ROJO - Fondo Principal */
+            color: var(--color-texto-claro);
+        }
+
+        #container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px; /* Pequeño ajuste estético */
+        }
+
+        /* SECCIÓN SUPERIOR: BOTONERA (ROSA) */
+        #botonera {
+            width: 100%;
+            height: 80px;
+            background-color: var(--color-rosa-superior); /* ROSA - Secciones de arriba */
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            color: var(--color-texto-oscuro); /* Texto oscuro para contraste */
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* BOTONES (ROJO) */
+        .btn {
+            flex: 1;
+            background-color: var(--color-rojo-botones); /* ROJO - Botones */
+            color: var(--color-blanco);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+        
+        .btn:hover {
+            background-color: #AA0000; /* Rojo más oscuro al pasar el ratón */
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .inicio-btn {
+            flex: 2;
+            background-color: var(--color-rojo-botones); /* Mismo rojo para el botón principal */
+            color: var(--color-blanco);
+        }
+
+        /* FONDO Y ELEMENTOS POSICIONADOS */
+        #backgrand {
+            position: relative;
+            width: 100%;
+            height: 640px;
+        }
+        
+        #backgrand img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        #imagencul1 {
+            position: absolute;
+            left: 8%;
+            top: 10%;
+            width: 500px;
+            animation: aparecer 1s ease-in-out;
+            z-index: 2; 
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #imagencul1 img {
+            width: 100%;
+            height: auto;
+            max-height: 100%; 
+            display: block;
+            object-fit: contain; 
+        }
+
+        /* TARJETAS DERECHA (BLANCO) */
+        .tarjeta {
+            position: absolute;
+            right: 10%;
+            width: 30%;
+            height: 200px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: var(--color-blanco); /* BLANCO - Secciones de la derecha */
+            color: var(--color-texto-oscuro); /* Texto negro para contraste */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .tarjeta:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Ajuste de posición de las tarjetas */
+        #tarjeta0 {
+            top: 50px; /* Ajustado para mejor distribución */
+        }
+
+        /* La tarjeta 1 no existía en el HTML original, pero la definimos como la segunda */
+        #tarjeta1 { 
+            top: 280px; /* Ajustado para mejor distribución */
+        }
+        
+        /* La tarjeta 2 pasa a ser la última */
+        #tarjeta2 {
+            top: 510px; /* Ajustado para mejor distribución */
+            height: 150px;
+        }
+        
+        /* BOTONES DENTRO DE LAS TARJETAS (ROJO) */
+        .tarjeta .boton {
+            background-color: var(--color-rojo-botones); /* ROJO - Botones */
+            color: var(--color-blanco);
+            width: 120px;
+            height: 40px;
+            margin: 15px auto 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s ease, box-shadow 0.2s;
+            font-weight: bold;
+        }
+
+        .tarjeta .boton:hover {
+            background-color: #AA0000; /* Rojo más oscuro al pasar el ratón */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* SECCIÓN DE GALERÍA (GRIS OSCURO) */
+        #galeria {
+            width: 100%;
+            background-color: var(--color-gris-oscuro); /* GRIS OSCURO - Galería para contraste */
+            display: flex;
+            justify-content: center;
+            padding: 30px 0;
+            gap: 20px;
+        }
+
+        #galeria img {
+            width: 150px;
+            height: auto;
+            transition: transform 0.3s;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #galeria img:hover {
+            transform: scale(1.1);
+        }
+
+        /* ANIMACIÓN (sin cambios, se mantiene el efecto de entrada) */
+        @keyframes aparecer {
+            0% {
+                transform: translateX(-150%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0); /* Cambiado de 5% a 0 para un mejor ajuste */
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="botonera">
+        <h1>MI PORTAL</h1>
+        <button class="btn inicio-btn">Perfil</button>
+        <button class="btn">Calendario</button>
+        <button class="btn">Portfolio</button>
+        <button class="btn">Servicios</button>
+        <button class="btn">Recursos</button>
+        <button class="btn">Materias</button>
+    </div>  
+    <div id="backgrand">
+        <!-- Imagen de Fondo: Asegúrate de reemplazar esta URL con una imagen válida si el recurso local falla -->
+        <img src= "../../Downloads/imagenOpengraph_UVM.jpg"
+             onerror="this.src='https://placehold.co/1920x1081/CC3333/FFFFFF?text=Fondo+Principal+Rojo';" 
+             alt="Fondo"/> 
+    </div>
+
+    <!-- Se cambió el posicionamiento de las tarjetas para que no se superpongan tanto -->
+    <div id="imagencul1">
+        <!-- Imagen del personaje: Reemplazada con un placeholder para asegurar la visualización -->
+        <img src=  "../../Downloads/lince.jpeg"
+             onerror="this.src='https://placehold.co/500x625/FF99AA/222222?text=Ilustración';" 
+             alt="Ilustración Principal"/> 
+    </div>
+
+    <div id="tarjeta0" class="tarjeta">
+        <h2>Talleres</h2>
+        <p>Aquí podrás ver los talleres que te ofrecemos!</p>
+        <div class="boton">Ver más</div>
+    </div>
+
+    <div id="tarjeta1" class="tarjeta">
+        <h2>Noticias</h2>
+        <p>Entérate de los últimos acontecimientos académicos.</p>
+        <div class="boton">Leer ahora</div>
+    </div>
+
+  <div id="tarjeta2" class="tarjeta">
+        <h2>Mapa</h2>
+        <p>Recorre el campus</p>
+        <div class="boton">Click aquí</div>
+    </div>
+</div>
+</body>
+</html>

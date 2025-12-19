@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Noticias</title>
+
+<style>
+body {
+    font-family: Arial;
+    padding: 40px;
+    background: #fafafa;
+}
+
+h1 {
+    color: #D8232A;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.news-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 0 10px #ddd;
+    animation: fadeInUp 1s ease;
+}
+
+.news-card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.news-card h2 {
+    color: #333;
+}
+
+.back {
+    font-size: 20px;
+    text-decoration: none;
+    background: #D8232A;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity:0; }
+    to { opacity:1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(40px); opacity:0; }
+    to { transform: translateY(0); opacity:1; }
+}
+</style>
+
+</head>
+<body>
+
+<a class="back" href="pagina.html">← Volver</a>
+
+<h1>Noticias UVM</h1>
+
+<div class="news-card">
+    <img src="internet-programmiersprachen-t.jpg">
+    <h2>Nuevo Taller de Programación Web</h2>
+    <p>La UVM abre un nuevo taller para estudiantes de primer semestre enfocado en HTML, CSS y JavaScript.</p>
+</div>
+
+<div class="news-card">
+  <img src="desarollo-de-aplicaciones-web-DAW-lenguajes-de-programacion_Mesa-de-trabajo-1-1.jpg">
+    <h2>Conferencia sobre tutorias de programacion web</h2>
+    <p>Expertos internacionales compartirán sobre la programacion y como pueden aprender facil .</p>
+</div>
+
+<div class="news-card">
+  <img src="5-ejemplos-de-proyectos-educativos-que-te-pueden-inspirar.jpg">
+    <h2>Convocatoria para proyectos estudiantiles</h2>
+    <p>Participa en la convocatoria 2025 para presentar propuestas innovadoras dentro del campus.</p>
+</div>
+
+</body>
+</html>
+
